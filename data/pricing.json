@@ -1,0 +1,33 @@
+{
+  "endpoints": {
+    "seedream-4.5-edit/edit_image": {
+      "unit_price_cents": 7
+    },
+    "seedream-5-lite-edit/edit_image": {
+      "unit_price_cents": 6
+    },
+    "seedream-v4-edit/edit_image": {
+      "unit_price_cents": 10,
+      "billing_config": {
+        "key": "output_count",
+        "overrides": {
+          "1": 10,
+          "2": 20,
+          "3": 30,
+          "4": 40,
+          "5": 50,
+          "6": 60
+        }
+      }
+    },
+    "seedream-4.5-text-to-image/text_to_image": {
+      "unit_price_cents": 7
+    },
+    "seedream-5-lite-text-to-image/text_to_image": {
+      "unit_price_cents": 6
+    },
+    "seedream-v4-text-to-image/text_to_image": {
+      "unit_price_cents": 10
+    }
+  }
+}

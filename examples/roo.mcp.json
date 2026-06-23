@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "seedream": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@runapi.ai/seedream-mcp"
+      ],
+      "env": {
+        "RUNAPI_API_KEY": "${RUNAPI_API_KEY}"
+      }
+    }
+  }
+}
