@@ -1,7 +1,7 @@
 {
   "name": "@runapi.ai/seedream-mcp",
-  "version": "0.1.1",
-  "description": "Seedream MCP server for RunAPI — create Seedream AI tasks (edit image, text to image), poll status, and check pricing across 6 models with one API key.",
+  "version": "0.1.2",
+  "description": "RunAPI Seedream MCP server for image generation: create tasks, poll results, and check pricing across 6 model variants from Claude Code, Codex, Cursor, and VS Code.",
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
@@ -25,12 +25,16 @@
   },
   "keywords": [
     "runapi",
+    "runapi-ai",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
-    "ai",
+    "ai-agents",
+    "claude-code",
+    "cursor",
+    "vscode",
     "seedream",
     "seedream-mcp",
-    "seedream-ai",
     "seedream-api",
     "image-generation",
     "ai-image",
@@ -39,7 +43,7 @@
   ],
   "author": "RunAPI",
   "license": "Apache-2.0",
-  "homepage": "https://runapi.ai",
+  "homepage": "https://runapi.ai/models/seedream",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/runapi-ai/seedream-mcp.git"
