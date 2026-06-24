@@ -1,6 +1,6 @@
 {
   "name": "@runapi.ai/seedream-mcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "RunAPI Seedream MCP server for image generation: create tasks, poll results, and check pricing across 6 model variants from Claude Code, Codex, Cursor, and VS Code.",
   "type": "module",
   "main": "dist/src/index.js",
