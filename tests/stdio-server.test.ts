@@ -45,7 +45,7 @@ describe("seedream stdio MCP server", () => {
 
     const tools = await client.listTools();
     const names = tools.tools.map((tool) => tool.name).sort();
-    expect(names).toEqual(["check_pricing","edit_image","get_task","text_to_image"]);
+    expect(names).toEqual(["check_pricing","edit_image","get_task","login","text_to_image"]);
 
     const pricing = await client.callTool({ name: "check_pricing", arguments: {} });
     const content = pricing.content?.[0];
