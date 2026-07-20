@@ -1,7 +1,7 @@
 <h1 align="center">RunAPI Seedream MCP Server</h1>
 
 <p align="center">
-  <strong>Seedream API access for AI agents: create image generation tasks, poll results, and check pricing through one focused MCP server.</strong>
+  <strong>Seedream API access for AI agents: run image generation operations, poll asynchronous results, and check pricing through one focused MCP server.</strong>
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
   <a href="https://github.com/runapi-ai/seedream-mcp"><img src="https://img.shields.io/badge/GitHub-runapi--ai%2Fseedream--mcp-24292f?style=flat-square" alt="GitHub repository"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/Type-MCP_Server-blue?style=flat-square" alt="MCP Server">
-  <img src="https://img.shields.io/badge/Models-6-16a34a?style=flat-square" alt="6 models">
+  <img src="https://img.shields.io/badge/Models-8-16a34a?style=flat-square" alt="8 models">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 ## Why This Package?
 
 `@runapi.ai/seedream-mcp` is a focused Model Context Protocol server for the **Seedream** model line on RunAPI.
-It gives MCP-compatible assistants direct access to 2 endpoints and 6 model variants without loading the full RunAPI catalog.
+It gives MCP-compatible assistants direct access to 2 endpoints and 8 model variants without loading the full RunAPI catalog.
 
 Use this per-model server when an agent should stay scoped to Seedream. Use [`@runapi.ai/mcp`](https://github.com/runapi-ai/mcp) when one assistant should discover every RunAPI model line.
 
@@ -83,12 +83,12 @@ Ready-made examples are in [`examples/`](examples/) for Claude, Cursor, Windsurf
 
 ## Models
 
-Seedream covers 6 model variants across 2 endpoints. Each tool accepts the models listed for it:
+Seedream covers 8 model variants across 2 endpoints. Each tool accepts the models listed for it:
 
 | Tool | Models |
 |---|---|
-| `edit_image` | `seedream-4.5-edit`, `seedream-5-lite-edit`, `seedream-v4-edit` |
-| `text_to_image` | `seedream-4.5-text-to-image`, `seedream-5-lite-text-to-image`, `seedream-v4-text-to-image` |
+| `edit_image` | `seedream-4.5-edit`, `seedream-5-lite-edit`, `seedream-5-pro-edit`, `seedream-v4-edit` |
+| `text_to_image` | `seedream-4.5-text-to-image`, `seedream-5-lite-text-to-image`, `seedream-5-pro-text-to-image`, `seedream-v4-text-to-image` |
 
 Model availability can change between releases. Use `check_pricing` or the [Seedream model page](https://runapi.ai/models/seedream) for the current catalog view.
 

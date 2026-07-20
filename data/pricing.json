@@ -6,6 +6,16 @@
     "seedream-5-lite-edit/edit_image": {
       "unit_price_cents": 6
     },
+    "seedream-5-pro-edit/edit_image": {
+      "unit_price_cents": 7,
+      "billing_config": {
+        "key": "output_quality",
+        "overrides": {
+          "basic": 7,
+          "high": 14
+        }
+      }
+    },
     "seedream-v4-edit/edit_image": {
       "unit_price_cents": 10,
       "billing_config": {
@@ -25,6 +35,16 @@
     },
     "seedream-5-lite-text-to-image/text_to_image": {
       "unit_price_cents": 6
+    },
+    "seedream-5-pro-text-to-image/text_to_image": {
+      "unit_price_cents": 7,
+      "billing_config": {
+        "key": "output_quality",
+        "overrides": {
+          "basic": 7,
+          "high": 14
+        }
+      }
     },
     "seedream-v4-text-to-image/text_to_image": {
       "unit_price_cents": 10

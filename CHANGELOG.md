@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.7](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.7) - 2026-07-20
+
+### Added
+- Add Seedream 5-Lite `output_format` support with `png` and `jpeg` validation.
+- Add Seedream 5 Pro text-to-image and edit-image tools with their input contracts.
+
+### Fixed
+- Validate model-specific source image minimum and maximum counts from the generated contract.
+
+
 ## [v0.1.6](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.6) - 2026-07-08
 
 ### Fixed

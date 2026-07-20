@@ -2,23 +2,62 @@
   "catalog_models": [
     "seedream-4.5-edit",
     "seedream-5-lite-edit",
+    "seedream-5-pro-edit",
     "seedream-v4-edit",
     "seedream-4.5-text-to-image",
     "seedream-5-lite-text-to-image",
+    "seedream-5-pro-text-to-image",
     "seedream-v4-text-to-image"
   ],
   "actions": {
     "seedream/edit-image": {
       "model": "Seedream",
       "endpoint": "edit_image",
+      "task_type": "asynchronous",
       "models": [
         "seedream-4.5-edit",
         "seedream-5-lite-edit",
+        "seedream-5-pro-edit",
         "seedream-v4-edit"
+      ],
+      "rules": [
+        {
+          "when": {
+            "model": "seedream-4.5-edit"
+          },
+          "forbidden": [
+            "output_format"
+          ]
+        },
+        {
+          "when": {
+            "model": "seedream-5-pro-edit"
+          },
+          "forbidden": [
+            "output_resolution",
+            "output_count",
+            "seed"
+          ]
+        },
+        {
+          "when": {
+            "model": "seedream-v4-edit"
+          },
+          "forbidden": [
+            "output_format"
+          ]
+        }
       ],
       "fields_by_model": {
         "seedream-4.5-edit": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -32,18 +71,47 @@
             "required": true
           },
           "output_quality": {
+            "type": "string",
             "enum": [
               "basic",
               "high"
             ],
             "required": true
           },
+          "output_format": {
+            "type": "string"
+          },
           "source_image_urls": {
-            "required": true
+            "type": "array",
+            "required": true,
+            "max_items": 14,
+            "min_items": 1
+          },
+          "output_resolution": {
+            "type": "string"
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         },
         "seedream-5-lite-edit": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -57,18 +125,106 @@
             "required": true
           },
           "output_quality": {
+            "type": "string",
             "enum": [
               "basic",
               "high"
             ],
             "required": true
           },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "jpeg"
+            ],
+            "default": "png"
+          },
           "source_image_urls": {
+            "type": "array",
+            "required": true,
+            "max_items": 14,
+            "min_items": 1
+          },
+          "output_resolution": {
+            "type": "string"
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
+          }
+        },
+        "seedream-5-pro-edit": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string",
+            "max": 5000,
+            "min": 3,
+            "length": true,
             "required": true
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "enum": [
+              "1:1",
+              "4:3",
+              "3:4",
+              "16:9",
+              "9:16",
+              "2:3",
+              "3:2",
+              "21:9"
+            ],
+            "required": true
+          },
+          "output_quality": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "high"
+            ],
+            "required": true
+          },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "jpeg"
+            ],
+            "default": "png"
+          },
+          "source_image_urls": {
+            "type": "array",
+            "required": true,
+            "max_items": 10,
+            "min_items": 1
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         },
         "seedream-v4-edit": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -80,7 +236,28 @@
               "21:9"
             ]
           },
+          "output_quality": {
+            "type": "string"
+          },
+          "output_format": {
+            "type": "string"
+          },
+          "source_image_urls": {
+            "type": "array",
+            "required": true,
+            "max_items": 10,
+            "min_items": 1
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "1k",
+              "2k",
+              "4k"
+            ]
+          },
           "output_count": {
+            "type": "integer",
             "enum": [
               1,
               2,
@@ -90,15 +267,14 @@
               6
             ]
           },
-          "output_resolution": {
-            "enum": [
-              "1k",
-              "2k",
-              "4k"
-            ]
+          "seed": {
+            "type": "integer"
           },
-          "source_image_urls": {
-            "required": true
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         }
       }
@@ -106,14 +282,51 @@
     "seedream/text-to-image": {
       "model": "Seedream",
       "endpoint": "text_to_image",
+      "task_type": "asynchronous",
       "models": [
         "seedream-4.5-text-to-image",
         "seedream-5-lite-text-to-image",
+        "seedream-5-pro-text-to-image",
         "seedream-v4-text-to-image"
+      ],
+      "rules": [
+        {
+          "when": {
+            "model": "seedream-4.5-text-to-image"
+          },
+          "forbidden": [
+            "output_format"
+          ]
+        },
+        {
+          "when": {
+            "model": "seedream-5-pro-text-to-image"
+          },
+          "forbidden": [
+            "output_resolution",
+            "output_count",
+            "seed"
+          ]
+        },
+        {
+          "when": {
+            "model": "seedream-v4-text-to-image"
+          },
+          "forbidden": [
+            "output_format"
+          ]
+        }
       ],
       "fields_by_model": {
         "seedream-4.5-text-to-image": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -127,15 +340,41 @@
             "required": true
           },
           "output_quality": {
+            "type": "string",
             "enum": [
               "basic",
               "high"
             ],
             "required": true
+          },
+          "output_format": {
+            "type": "string"
+          },
+          "output_resolution": {
+            "type": "string"
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         },
         "seedream-5-lite-text-to-image": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -149,15 +388,94 @@
             "required": true
           },
           "output_quality": {
+            "type": "string",
             "enum": [
               "basic",
               "high"
             ],
             "required": true
+          },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "jpeg"
+            ],
+            "default": "png"
+          },
+          "output_resolution": {
+            "type": "string"
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
+          }
+        },
+        "seedream-5-pro-text-to-image": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string",
+            "max": 5000,
+            "min": 3,
+            "length": true,
+            "required": true
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "enum": [
+              "1:1",
+              "4:3",
+              "3:4",
+              "16:9",
+              "9:16",
+              "2:3",
+              "3:2",
+              "21:9"
+            ],
+            "required": true
+          },
+          "output_quality": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "high"
+            ],
+            "required": true
+          },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "jpeg"
+            ],
+            "default": "png"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         },
         "seedream-v4-text-to-image": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "4:3",
@@ -169,7 +487,22 @@
               "21:9"
             ]
           },
+          "output_quality": {
+            "type": "string"
+          },
+          "output_format": {
+            "type": "string"
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "1k",
+              "2k",
+              "4k"
+            ]
+          },
           "output_count": {
+            "type": "integer",
             "enum": [
               1,
               2,
@@ -179,12 +512,14 @@
               6
             ]
           },
-          "output_resolution": {
-            "enum": [
-              "1k",
-              "2k",
-              "4k"
-            ]
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "callback_url": {
+            "type": "string"
           }
         }
       }
