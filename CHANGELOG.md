@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.1.8](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.8) - 2026-07-31
+
+### Changed
+- Resolve MCP prices from the RunAPI Price Schedule API instead of embedded package data.
+
+
 ## [v0.1.7](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.7) - 2026-07-20
 
 ### Added
