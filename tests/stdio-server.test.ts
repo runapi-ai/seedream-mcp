@@ -57,7 +57,7 @@ describe("seedream stdio MCP server", () => {
 
     const tools = await client.listTools();
     const names = tools.tools.map((tool) => tool.name).sort();
-    expect(names).toEqual(["check_pricing","edit_image","get_task","login","text_to_image"]);
+    expect(names).toEqual(["check_pricing","decompose_layers","edit_image","get_task","login","text_to_image"]);
 
     for (const endpoint of []) {
       const tool = tools.tools.find((candidate) => candidate.name === endpoint);
@@ -73,7 +73,7 @@ describe("seedream stdio MCP server", () => {
 
     // Every advertised model must price without naming an endpoint, even one
     // that only lives on a non-primary endpoint of a multi-endpoint line.
-    for (const model of ["seedream-4.5-edit","seedream-5-lite-edit","seedream-5-pro-edit","seedream-v4-edit","seedream-4.5-text-to-image","seedream-5-lite-text-to-image","seedream-5-pro-text-to-image","seedream-v4-text-to-image"]) {
+    for (const model of ["seedream-5-pro-layer-decomposition","seedream-4.5-edit","seedream-5-lite-edit","seedream-5-pro-edit","seedream-v4-edit","seedream-4.5-text-to-image","seedream-5-lite-text-to-image","seedream-5-pro-text-to-image","seedream-v4-text-to-image"]) {
       const priced = await client.callTool({ name: "check_pricing", arguments: { model } });
       const pricedContent = priced.content?.[0];
       if (!pricedContent || pricedContent.type !== "text") {

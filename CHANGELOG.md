@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.1.9](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.9) - 2026-08-12
+
+### Added
+- Add the layer decomposition tool and model contract to the Seedream MCP server.
+
+
 ## [v0.1.8](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.8) - 2026-07-31
 
 ### Changed
