@@ -1,6 +1,6 @@
 {
   "name": "@runapi.ai/seedream-mcp",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "RunAPI Seedream MCP server for image generation: create tasks, poll results, and check pricing across 9 model variants from Claude Code, Codex, Cursor, and VS Code.",
   "type": "module",
   "main": "dist/src/index.js",
@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@runapi.ai/mcp-core": "0.3.0",
+    "@runapi.ai/mcp-core": "0.5.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

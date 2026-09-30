@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.2.0](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.2.0) - 2026-09-30
+
+### Changed
+- Send tool arguments to the service without local model, enum, range, required-field, or cross-field validation. Tool descriptions still list declared types and known values.
+  Migration: Invalid arguments now return the service's error, including its message, instead of a local tool-input rejection.
+- Document the output_count default of 1 on text_to_image and edit_image.
+- Depend on @runapi.ai/mcp-core 0.4.5 and send task creation and lookup to each tool's published route.
+
+
 ## [v0.1.9](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.1.9) - 2026-08-12
 
 ### Added

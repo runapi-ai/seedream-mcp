@@ -70,34 +70,6 @@
         "seedream-5-pro-edit",
         "seedream-v4-edit"
       ],
-      "rules": [
-        {
-          "when": {
-            "model": "seedream-4.5-edit"
-          },
-          "forbidden": [
-            "output_format"
-          ]
-        },
-        {
-          "when": {
-            "model": "seedream-5-pro-edit"
-          },
-          "forbidden": [
-            "output_resolution",
-            "output_count",
-            "seed"
-          ]
-        },
-        {
-          "when": {
-            "model": "seedream-v4-edit"
-          },
-          "forbidden": [
-            "output_format"
-          ]
-        }
-      ],
       "fields_by_model": {
         "seedream-4.5-edit": {
           "model": {
@@ -316,7 +288,8 @@
               4,
               5,
               6
-            ]
+            ],
+            "default": 1
           },
           "seed": {
             "type": "integer"
@@ -339,34 +312,6 @@
         "seedream-5-lite-text-to-image",
         "seedream-5-pro-text-to-image",
         "seedream-v4-text-to-image"
-      ],
-      "rules": [
-        {
-          "when": {
-            "model": "seedream-4.5-text-to-image"
-          },
-          "forbidden": [
-            "output_format"
-          ]
-        },
-        {
-          "when": {
-            "model": "seedream-5-pro-text-to-image"
-          },
-          "forbidden": [
-            "output_resolution",
-            "output_count",
-            "seed"
-          ]
-        },
-        {
-          "when": {
-            "model": "seedream-v4-text-to-image"
-          },
-          "forbidden": [
-            "output_format"
-          ]
-        }
       ],
       "fields_by_model": {
         "seedream-4.5-text-to-image": {
@@ -562,7 +507,8 @@
               4,
               5,
               6
-            ]
+            ],
+            "default": 1
           },
           "seed": {
             "type": "integer"
