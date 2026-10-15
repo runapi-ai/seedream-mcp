@@ -130,7 +130,11 @@
             "type": "string"
           },
           "prompt": {
-            "type": "string"
+            "type": "string",
+            "max": 2995,
+            "min": 4,
+            "length": true,
+            "required": true
           },
           "aspect_ratio": {
             "type": "string",
@@ -192,7 +196,7 @@
           "prompt": {
             "type": "string",
             "max": 5000,
-            "min": 3,
+            "min": 4,
             "length": true,
             "required": true
           },
@@ -232,6 +236,13 @@
             "max_items": 10,
             "min_items": 1
           },
+          "background": {
+            "type": "string",
+            "enum": [
+              "transparent"
+            ],
+            "description": "Keep the transparent background of the source image. Requires exactly one PNG source image with an alpha channel and output_format png."
+          },
           "enable_safety_checker": {
             "type": "boolean"
           },
@@ -257,7 +268,8 @@
               "16:9",
               "9:16",
               "21:9"
-            ]
+            ],
+            "default": "1:1"
           },
           "output_quality": {
             "type": "string"
@@ -277,7 +289,8 @@
               "1k",
               "2k",
               "4k"
-            ]
+            ],
+            "default": "2k"
           },
           "output_count": {
             "type": "integer",
@@ -292,7 +305,8 @@
             "default": 1
           },
           "seed": {
-            "type": "integer"
+            "type": "integer",
+            "max": 1000000
           },
           "enable_safety_checker": {
             "type": "boolean"
@@ -367,7 +381,11 @@
             "type": "string"
           },
           "prompt": {
-            "type": "string"
+            "type": "string",
+            "max": 2995,
+            "min": 4,
+            "length": true,
+            "required": true
           },
           "aspect_ratio": {
             "type": "string",
@@ -423,7 +441,7 @@
           "prompt": {
             "type": "string",
             "max": 5000,
-            "min": 3,
+            "min": 4,
             "length": true,
             "required": true
           },
@@ -482,7 +500,8 @@
               "16:9",
               "9:16",
               "21:9"
-            ]
+            ],
+            "default": "1:1"
           },
           "output_quality": {
             "type": "string"
@@ -496,7 +515,8 @@
               "1k",
               "2k",
               "4k"
-            ]
+            ],
+            "default": "2k"
           },
           "output_count": {
             "type": "integer",
@@ -511,7 +531,8 @@
             "default": 1
           },
           "seed": {
-            "type": "integer"
+            "type": "integer",
+            "max": 1000000
           },
           "enable_safety_checker": {
             "type": "boolean"

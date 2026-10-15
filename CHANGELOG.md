@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.3.0](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.3.0) - 2026-10-15
+
+### Added
+- The Seedream edit-image tool accepts an optional background of transparent for seedream-5-pro-edit only; it requires exactly one PNG source image with an alpha channel and output_format png. Other Seedream edit models reject background.
+
+### Changed
+- Declare the 1:1 server default for aspect_ratio and the 2k server default for output_resolution on seedream-v4-text-to-image and seedream-v4-edit.
+- Seedream 5 Lite prompts accept 4-2995 characters, Seedream 5 Pro prompts need at least 4 characters, and Seedream v4 seed is at most 1000000.
+- Non-Pro Seedream edit models no longer disclose background. Seedream 5 Pro edit continues to disclose only transparent.
+
+
 ## [v0.2.0](https://github.com/runapi-ai/seedream-mcp/releases/tag/v0.2.0) - 2026-09-30
 
 ### Changed
